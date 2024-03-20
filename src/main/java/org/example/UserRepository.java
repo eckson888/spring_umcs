@@ -10,8 +10,16 @@ public class UserRepository implements IUserRepository
     private ArrayList<User>userList;
 
     @Override
-    public User getUser(String login) {
-
+    public User getUser(String login)
+    {
+        for(User u: userList)
+        {
+            if(u.login.equals(login))
+            {
+                return u;
+            }
+        }
+        return null;
     }
 
     @Override
@@ -31,6 +39,5 @@ public class UserRepository implements IUserRepository
         }
         printWriter.close();
         fileWriter.close();
-    }
     }
 }
