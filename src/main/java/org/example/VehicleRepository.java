@@ -46,7 +46,7 @@ public class VehicleRepository implements IVehicleRepository {
 
     public List<Vehicle> getFromCsv()
     {
-        try (BufferedReader br = new BufferedReader(new FileReader("src/main/resources/baza.csv")))
+        try (BufferedReader br = new BufferedReader(new FileReader("src/main/resources/vehicles.csv")))
         {
             String line;
             while ((line = br.readLine()) != null)
@@ -114,7 +114,7 @@ public class VehicleRepository implements IVehicleRepository {
     }
     @Override
     public void save() throws IOException {
-        FileWriter fileWriter = new FileWriter("src/main/resources/baza.csv");
+        FileWriter fileWriter = new FileWriter("src/main/resources/vehicles.csv");
         PrintWriter printWriter = new PrintWriter(fileWriter);
         printWriter.flush();
         printWriter.write("");
