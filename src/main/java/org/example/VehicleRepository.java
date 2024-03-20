@@ -2,6 +2,7 @@ package org.example;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class VehicleRepository implements IVehicleRepository {
@@ -52,6 +53,7 @@ public class VehicleRepository implements IVehicleRepository {
             while ((line = br.readLine()) != null)
             {
                 String[] values = line.split(";");
+                System.out.println(Arrays.toString(values));
                 if(values[6].equals("C"))
                 {
                     vehicleList.add(new Car(values[0],

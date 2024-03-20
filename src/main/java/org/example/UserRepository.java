@@ -7,8 +7,12 @@ import java.util.ArrayList;
 
 public class UserRepository implements IUserRepository
 {
-    private ArrayList<User>userList;
+    private ArrayList<User>userList=new ArrayList<>();
 
+    public void addUser(User user) throws IOException {
+        userList.add(user);
+        save();
+    };
     @Override
     public User getUser(String login)
     {
