@@ -2,10 +2,18 @@ package org.example;
 import org.apache.commons.codec.digest.DigestUtils;
 public class User
 {
+
     public String login;
     public String password;
     public String role;
     public Vehicle rentedCar;
+
+    public User(String login, String password, String role, Vehicle rentedCar) {
+        this.login = login;
+        this.password = password;
+        this.role = role;
+        this.rentedCar = rentedCar;
+    }
 
     public String toCsv()
     {
