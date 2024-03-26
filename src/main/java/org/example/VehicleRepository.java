@@ -37,7 +37,6 @@ public class VehicleRepository implements IVehicleRepository {
                 break;
             }
         }
-
     }
 
     @Override

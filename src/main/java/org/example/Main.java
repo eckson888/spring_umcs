@@ -3,6 +3,8 @@ package org.example;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Objects;
+
 import org.apache.commons.codec.digest.DigestUtils;
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -14,7 +16,20 @@ public class Main {
         String login = reader.readLine();
         String password= reader.readLine();
         Auth authentication=new Auth();
-        authentication.checkCredentials(login,password);
+        if(authentication.checkCredentials(login,password))
+        {
+            if(Objects.equals(users.getUserObject(login).role, "admin"))
+            {
+                System.out.println("Witaj, admin");
+                Vehicle veh=new Car("lu 12345","honda","civic",1998,5000.F,false,"C");
+                vehicles.addVehicle(veh);
+                vehicles.removeVehicle("lu 12345");
+            }
+            else
+            {
+                System.out.println("Witaj, user");
+            }
+        }
         //        if(users.checkLogin(login))
 //        {
 //            System.out.println("Podaj Hasło:");

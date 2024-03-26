@@ -24,7 +24,7 @@ public class User
 
     public String toCsv()
     {
-        String password_encrypted=DigestUtils.sha256Hex(password);
+//        String password_encrypted=DigestUtils.sha256Hex(password);
         return (login+";"+
                 password+";"+
                 role+";"+
