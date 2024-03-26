@@ -5,7 +5,8 @@ import java.util.ArrayList;
 
 public interface IUserRepository
 {
-    public User getUser(String login);
+    User getUserObject(String login);
+
     public ArrayList<User> getUsers();
     public void save() throws IOException;
 }

@@ -1,21 +1,31 @@
 package org.example;
 
+import java.io.BufferedReader;
 import java.io.IOException;
-
+import java.io.InputStreamReader;
+import org.apache.commons.codec.digest.DigestUtils;
 public class Main {
     public static void main(String[] args) throws IOException {
 
         VehicleRepository vehicles=new VehicleRepository();
         UserRepository users=new UserRepository();
-        Car car=new Car("3","honda","civic",1998, 1.0F,false,"C");
-        vehicles.addVehicle(car);
-        User test=new User("mat123","mat123","admin",car);
-        users.addUser(test);
-        for(User u: users.getUsers())
-        {
-            System.out.println(u.password);
-        }
-
+        System.out.println("Podaj login oraz hasło:");
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String login = reader.readLine();
+        String password= reader.readLine();
+        Auth authentication=new Auth();
+        authentication.checkCredentials(login,password);
+        //        if(users.checkLogin(login))
+//        {
+//            System.out.println("Podaj Hasło:");
+//            String password= reader.readLine();
+//            password = DigestUtils.sha256Hex(password);
+//            if(users.checkPassword(password))
+//            {
+//                System.out.println("Zalogowano pomyslnie!");
+//            }
+//        }
+        users.save();
         //vehicles.save();
 
     }

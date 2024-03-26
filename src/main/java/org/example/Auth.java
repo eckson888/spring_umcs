@@ -13,7 +13,8 @@ public class Auth {
         try (BufferedReader br = new BufferedReader(new FileReader("src/main/resources/users.csv")))
         {
             String line;
-            while ((line = br.readLine()) != null) {
+            while ((line = br.readLine()) != null)
+            {
                 String[] values = line.split(";");
                 if (values[0].equals(login) && values[1].equals(hashedPW)) {
                     System.out.println("Dane poprawne");
